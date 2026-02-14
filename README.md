@@ -17,6 +17,8 @@ The focus is therefore not only on predictive accuracy, but also on methodologic
 
 The project began by setting up the repository structure and initializing a Jupyter Notebook to support exploratory analysis and model development. The Utrecht housing dataset (`Utrechthousinghuge.csv`) was downloaded and loaded into a pandas DataFrame.
 
+Link to the original dataset in Kaggle: https://www.kaggle.com/datasets/ictinstitute/utrecht-housing-dataset/data
+
 Initial inspection steps were performed to understand the structure of the dataset, including the number of observations, available features, and data types. A preview of the data confirmed that each row represents an individual property listing and that the dataset is suitable for a supervised regression task.
 
 ---
