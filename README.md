@@ -3,9 +3,13 @@
 
 # Project Overview
 
-The goal of this project is to build a machine learning model that predicts housing prices in Utrecht based on individual property characteristics. Using a publicly available dataset of approximately 2,000 housing listings, the project explores how features such as living area, lot size, number of bathrooms, construction year, energy efficiency, and property amenities relate to housing prices.
+The objective of this project is to develop and compare multiple machine learning models for predicting residential property prices in Utrecht using structured property-level data. The dataset consists of approximately 2,000 individual housing listings and includes quantitative features such as living area, lot size, number of bathrooms, construction year, energy efficiency, amenities, and valuation indicators.
 
-Rather than focusing solely on maximizing predictive accuracy, the project emphasizes the development of a clear and well-structured end-to-end data science workflow. This includes data loading, exploration, preprocessing, feature selection, model comparison, and evaluation, as well as an explicit discussion of modeling choices and limitations.
+Beyond building a single predictive model, the project is designed as a comparative study of different regression approaches, including linear models, tree-based methods, and a simple neural network. The aim is to evaluate how model complexity influences predictive performance and generalization.
+
+A strong emphasis is placed on constructing a transparent and well-structured end-to-end data science pipeline. This includes data validation, feature selection, careful handling of potentially sensitive predictors (such as tax-based valuations), model training, performance evaluation using appropriate regression metrics, and critical reflection on model assumptions and limitations.
+
+The focus is therefore not only on predictive accuracy, but also on methodological rigor, interpretability, and clear justification of modeling decisions.
 
 ---
 
