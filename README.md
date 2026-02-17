@@ -13,19 +13,25 @@ The focus is therefore not only on predictive accuracy, but also on methodologic
 
 ---
 
+## Reproducibility
+
+To ensure consistent and reproducible results across model training runs, random seeds were fixed for Python, NumPy, and PyTorch. Additionally, all stochastic algorithms such as train-test splitting and Random Forest were initialized with a fixed random state.
+
+---
+
 ## Data Loading and Initial Exploration
 
 The project began by setting up the repository structure and initializing a Jupyter Notebook to support exploratory analysis and model development. The Utrecht housing dataset (`Utrechthousinghuge.csv`) was downloaded and loaded into a pandas DataFrame.
 
-Link to the original dataset in Kaggle: https://www.kaggle.com/datasets/ictinstitute/utrecht-housing-dataset/data
+Link to the original dataset in Kaggle: https://www.kaggle.com/datasets/ictinstitute/utrecht-housing-dataset/data
 
 Initial inspection steps were performed to understand the structure of the dataset, including the number of observations, available features, and data types. A preview of the data confirmed that each row represents an individual property listing and that the dataset is suitable for a supervised regression task.
 
 ---
 
-## Data Cleaning
+## Data Preprocessing
 
-The dataset required minimal cleaning prior to modeling. A duplicate check was performed to ensure that no repeated property listings were present. It was observed that two listings shared the same `id` value despite having different property characteristics and prices. This suggests that the identifier does not uniquely represent a single property. As a result, the `id` column was removed and not used in the modeling process.
+The dataset required minimal cleaning prior to modeling. A duplicate check was performed to ensure that no repeated property listings were present. It was observed that a small number of listings shared the same `id` value despite having different property characteristics and prices. This suggests that the identifier does not uniquely represent a single property. As a result, the `id` column was removed and not used in the modeling process.
 
 All features were already provided in numerical format, with categorical characteristics encoded as binary variables where applicable. This significantly reduced preprocessing complexity and allowed the focus to shift quickly toward feature preparation and model development.
 
@@ -33,7 +39,7 @@ Overall, the dataset was well-structured and suitable for direct use in supervis
 
 ---
 
-## Feature Selection and Column Filtering
+### Feature Selection and Column Filtering
 
 Before modeling, an initial feature selection step was carried out to remove columns that did not contribute meaningful predictive value or that could negatively affect model performance.
 
@@ -45,11 +51,53 @@ The remaining features were retained based on their direct relevance to property
 
 ---
 
-## Column Renaming and Formatting
+### Column Renaming and Formatting
 
 As part of the preprocessing stage, column names were standardized to improve readability and ensure compatibility with common Python data analysis and machine learning workflows. Columns containing hyphens were renamed using snake_case formatting to follow Python naming conventions and to allow for easier feature access and manipulation in code.
 
 This step improves code clarity, reduces the risk of syntax-related errors, and ensures consistency across the project.
+
+---
+
+### Feature Type Identification
+
+All features in the dataset are numerical in format. However, two variables — `energy_eff` and `monument` — represent categorical property characteristics encoded as binary values (0 = No, 1 = Yes).
+
+These columns were inspected using the `.unique()` method and confirmed to contain only valid binary values:
+
+- `energy_eff`: [0, 1]
+- `monument`: [0, 1]
+
+Since they are already properly encoded, no additional transformation (e.g., one-hot encoding) was required.
+
+---
+
+## Descriptive Statistics and Distribution Analysis
+
+The dataset contains 2,000 observations with no missing values across the inspected numerical features. Overall, the statistical summary indicates a well-structured and realistic housing dataset.
+
+- **Build Year:**
+    
+    The `build_year` variable ranges from 1920 to 2018, with a mean of 1969 and near-zero skewness. The symmetric distribution suggests a balanced representation of properties across different construction periods.
+    
+- **Lot Area and House Area:**
+    
+    The average lot size is 115 m², while the average living area is 140 m². Both variables exhibit moderate positive skewness (≈1), indicating the presence of larger properties that extend the upper tail of the distribution. This pattern is expected in real estate data and does not suggest data irregularities.
+    
+- **Garden Size:**
+    
+    Garden size shows moderate right skewness, reflecting that while most properties have modest outdoor space, a smaller number have significantly larger gardens.
+    
+- **Bathrooms:**
+    
+    The distribution is slightly positively skewed, likely due to most properties having one bathroom and fewer properties having multiple bathrooms.
+    
+- **Tax Value and Retail Value:**
+    
+    The mean tax value (€651,715) and mean retail value (€791,024) are closely aligned, with retail values consistently higher. This is economically reasonable, as market listing prices often exceed official tax assessments. Both variables exhibit moderate positive skewness, which is typical for housing price distributions.
+    
+
+Overall, no extreme or implausible values were detected. The observed variation appears to reflect natural market diversity rather than data quality issues.
 
 ---
 
@@ -59,7 +107,7 @@ The `retailvalue` feature was selected as the target variable for this project. 
 
 ---
 
-## Consideration of the `taxvalue` Feature
+### Consideration of the `taxvalue` Feature
 
 The `taxvalue` feature represents an official property valuation provided by public authorities and is typically based on market trends, location, and physical characteristics of the property. Due to its close relationship with actual market prices, this feature has the potential to significantly improve predictive performance.
 
