@@ -372,3 +372,23 @@ However, because tax valuations are often derived using information similar to t
 To address this concern, two modeling approaches were adopted. One set of models was trained using all available features except `taxvalue`, focusing exclusively on physical and qualitative property attributes. A second set of models included `taxvalue` in order to assess the impact of official valuations on prediction performance.
 
 Comparing these approaches enables a more transparent evaluation of model behavior and provides insight into how strongly tax assessments influence housing price predictions.
+
+---
+
+## Train-Test Split Verification
+
+The dataset was split into training and test sets using an 80/20 ratio with a fixed random seed (`random_state=42`) to ensure reproducibility.
+
+**Split Summary:**
+
+- **Training set**: 1,600 observations (80%)
+- **Test set**: 400 observations (20%)
+- **Total**: 2,000 observations
+
+**Validation Checks:**
+
+- ✅ No data loss: Training + test observations equal the original dataset size
+- ✅ No overlap: Training and test sets contain completely distinct observations
+- ✅ Consistent splits: Both modeling scenarios (with and without `tax_value`) use identical train-test splits, ensuring fair comparison across models
+
+This split size provides sufficient data for model training while reserving an adequate test set for reliable performance evaluation. The 80/20 ratio is a widely accepted standard that balances model learning capacity with evaluation robustness.
