@@ -101,6 +101,51 @@ Overall, no extreme or implausible values were detected. The observed variation 
 
 ---
 
+## Distribution Visualization of Numeric Features
+
+To understand the underlying structure and variability of the dataset, distribution plots were generated for the six primary numeric features: lot area, house area, garden size, build year, tax value, and retail value.
+
+Each variable was visualized using a histogram with an overlaid kernel density estimate (KDE) curve to provide both frequency counts and a smoothed representation of the distribution shape.
+
+### Visualization Design Decisions
+
+The plots were arranged in a 2×3 grid layout to facilitate direct comparison across features. A sophisticated color scheme was applied throughout: slate blue (`#5B7C99`) for histogram bars and muted crimson (`#C1666B`) for KDE curves. This color palette was chosen to create a professional, academic aesthetic while maintaining clear visual differentiation between histogram and density elements.
+
+**Handling High-Value Features:**
+
+The `tax_value` and `retail_value` features exhibit a wide numeric range (from approximately €300,000 to over €1,000,000), which posed challenges for readability on a linear scale. To address this, a logarithmic scale was applied to the x-axis for these two variables.
+
+However, logarithmic scaling introduced a secondary issue: matplotlib's default tick formatting displayed values in scientific notation (e.g., 4 × 10⁵ instead of €400,000), which reduced interpretability for non-technical audiences.
+
+To resolve this, custom tick positions and labels were explicitly defined using `FixedLocator` and `FixedFormatter`. Tick values were set at €300k, €500k, €700k, and €1M, with labels formatted using abbreviated notation (k for thousands, M for millions) to improve readability without sacrificing precision. Minor ticks were suppressed using `NullLocator` to prevent residual scientific notation from appearing on the axis.
+
+**Color Implementation:**
+
+The KDE line color required special handling due to seaborn's `histplot` parameter structure. Rather than using the `line_kws` or `kde_kws` parameters (which do not accept color arguments directly), the KDE line styling was applied post-creation by iterating through the axis line objects and manually setting their color and linewidth properties. This approach ensured consistent application of the muted crimson color across all KDE curves.
+
+**Additional Styling:**
+
+To enhance clarity and reduce visual clutter, the following refinements were applied:
+
+- Gridlines were added to the y-axis only, using dashed lines with reduced opacity
+- Top and right spines were removed from each subplot
+- A centered figure title was added to provide context for the entire grid
+- Individual subplot titles were cleaned and labeled with human-readable feature names and appropriate units (m² for area measurements, € for monetary values)
+
+![image.png](attachment:49a0655b-e15b-4697-bcec-f31422fa50c4:image.png)
+
+### Interpretation
+
+The resulting visualizations confirm the statistical patterns observed in the descriptive analysis:
+
+- **Lot Area, House Area, and Garden Size** exhibit moderate right skewness, reflecting the presence of larger properties in the dataset
+- **Build Year** shows a relatively uniform distribution across decades, with no strong temporal bias
+- **Tax Value and Retail Value** both display near-normal distributions when viewed on a log scale, with retail values consistently higher than tax values — a pattern that aligns with economic expectations, as market prices typically exceed official tax assessments
+
+These visualizations provide a clear and interpretable foundation for subsequent feature engineering and modeling decisions.
+
+---
+
 ## Target Variable Definition
 
 The `retailvalue` feature was selected as the target variable for this project. It represents the market value of each property and serves as the outcome the machine learning models aim to predict.
