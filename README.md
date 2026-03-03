@@ -217,7 +217,6 @@ Bathrooms:     ▌                                  0.01%
 ## ⚠️ Limitations
 
 **Data Constraints:**
-- Geographic scope limited to Utrecht only
 - No location coordinates (biggest missing feature)
 - Snapshot in time (market conditions may change)
 - Limited luxury property samples (>€1M)
