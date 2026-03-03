@@ -76,15 +76,31 @@ df.info()
 - Lists all column names and their data types
 - Shows how many non-null (non-missing) values each column has
 
-**Output example:**
+**Output:**
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 2000 entries, 0 to 1999
-Data columns (total 15 columns):
- #   Column        Non-Null Count  Dtype  
----  ------        --------------  -----  
- 0   id            2000 non-null   int64  
- 1   retailvalue   2000 non-null   int64  
+Data columns (total 16 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   id           2000 non-null   int64  
+ 1   zipcode      2000 non-null   int64  
+ 2   lot-len      2000 non-null   float64
+ 3   lot-width    2000 non-null   float64
+ 4   lot-area     2000 non-null   float64
+ 5   house-area   2000 non-null   float64
+ 6   garden-size  2000 non-null   float64
+ 7   balcony      2000 non-null   int64  
+ 8   x-coor       2000 non-null   int64  
+ 9   y-coor       2000 non-null   int64  
+ 10  buildyear    2000 non-null   int64  
+ 11  bathrooms    2000 non-null   int64  
+ 12  taxvalue     2000 non-null   int64  
+ 13  retailvalue  2000 non-null   int64  
+ 14  energy-eff   2000 non-null   int64  
+ 15  monument     2000 non-null   int64  
+dtypes: float64(5), int64(11)
+memory usage: 250.1 KB
 ```
 
 ---
