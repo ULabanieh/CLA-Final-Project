@@ -50,6 +50,7 @@ utrecht-housing-prediction/
 │   ├── model_comparison_rmse.png        # Performance visualizations
 │   ├── feature_importance.png
 │   ├── residual_analysis.png
+│   ├── ...
 │   └── predictions.csv                  # Model predictions
 │
 ├── models/
@@ -57,8 +58,8 @@ utrecht-housing-prediction/
 │
 ├── docs/
 │   ├── code_walkthrough.md              # Step-by-step code explanation
-│   └── project_documentation.md         # Full methodology and results
-    └── requirements.txt                 # Python dependencies
+│   ├── project_documentation.md         # Full methodology and results
+│   └── requirements.txt                 # Python dependencies
 │
 ├── LICENSE                              # MIT License
 └── README.md                            # This file
