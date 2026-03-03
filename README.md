@@ -171,7 +171,7 @@ Energy Eff:    ▌                                  0.04%
 Bathrooms:     ▌                                  0.01%
 ```
 
-**Insight:** Interior living space is the overwhelming price driver in Utrecht's housing market.
+**Insight:** Interior living space size is the overwhelming price driver in Utrecht's housing market.
 
 ---
 
