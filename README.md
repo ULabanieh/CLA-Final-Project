@@ -63,8 +63,9 @@ utrecht-housing-prediction/
 ├── docs/
 │   ├── code_walkthrough.md              # Step-by-step code explanation
 │   └── project_documentation.md         # Full methodology and results
+    └── requirements.txt                 # Python dependencies
 │
-├── requirements.txt                      # Python dependencies
+├── LICENSE                              # MIT License
 └── README.md                            # This file
 ```
 
