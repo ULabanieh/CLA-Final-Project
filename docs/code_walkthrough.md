@@ -160,7 +160,7 @@ lot-area       0
 
 ### Step 2.3: Remove Unnecessary Columns
 ```python
-df = df.drop(columns=['id', 'zipcode', 'lot-len', 'lot-width'])
+df = df.drop(columns=['id', 'lot-len', 'lot-width'])
 ```
 
 **What this does:**
@@ -169,7 +169,6 @@ df = df.drop(columns=['id', 'zipcode', 'lot-len', 'lot-width'])
 
 **Why remove these?**
 - `id` → Just a reference number, doesn't predict price
-- `zipcode` → Too many unique values, causes problems
 - `lot-len`, `lot-width` → Redundant (we have `lot-area`)
 
 ---
