@@ -335,9 +335,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Project Author:** [Your Name]  
-**Email:** your.email@example.com  
-**LinkedIn:** [Your LinkedIn Profile]
+**Project Author:** Usama Labanieh
+**Email:** usamalabanieh@protonmail.com  
+**LinkedIn:** https://www.linkedin.com/in/usama-labanieh/
 
 ---
 
