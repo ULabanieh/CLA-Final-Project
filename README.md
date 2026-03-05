@@ -44,22 +44,19 @@ utrecht-housing-prediction/
 ├── data/
 │   └── Utrechthousinghuge.csv          # Raw dataset
 │
-├── notebooks/
-│   └── cla_project.ipynb                # Main analysis notebook
-│
 ├── outputs/
 │   ├── visualizations/                  # Performance charts
 │   │   ├── model_comparison_rmse.png
 │   │   ├── feature_importance.png
-│   │   └── residual_analysis.png
+│   │   ├── residual_analysis.png
+│   │   └── ...
 │   └── predictions.csv                  # Model predictions
 │
 ├── models/
 │   └── gradient_boosting_model.pkl      # Best performing model
 │
 ├── docs/
-│   ├── code_walkthrough.md              # Step-by-step code explanation
-│   └── project_documentation.md         # Full methodology and results
+│   └── project_summary.md               # Full methodology and results
 │
 ├── requirements.txt                      # Python dependencies
 ├── LICENSE                              # MIT License
