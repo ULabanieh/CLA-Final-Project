@@ -44,12 +44,11 @@ utrecht-housing-prediction/
 ├── data/
 │   └── Utrechthousinghuge.csv          # Raw dataset
 │
-├── outputs/
-│   ├── visualizations/                  # Performance charts
-│   │   ├── model_comparison_rmse.png
-│   │   ├── feature_importance.png
-│   │   ├── residual_analysis.png
-│   │   └── ...
+├── outputs/           
+│   ├── model_comparison_rmse.png    # Performance charts
+│   ├── feature_importance.png
+│   ├──residual_analysis.png
+│   ├── ...  
 │   └── predictions.csv                  # Model predictions
 │
 ├── models/
