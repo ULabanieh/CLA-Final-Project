@@ -10,6 +10,7 @@ This project develops and compares four different machine learning approaches to
 
 **Dataset:** 2,000 residential properties from Utrecht  
 **Source:** [Kaggle - Utrecht Housing Dataset](https://www.kaggle.com/datasets/ictinstitute/utrecht-housing-dataset/data?select=utrechthousinghuge.csv)
+
 **Objective:** Compare model complexity vs. predictive performance with location-aware features
 
 ---
